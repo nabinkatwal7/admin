@@ -1,11 +1,11 @@
+import "@mantine/core/styles.css";
 import "./App.css";
 
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/Router";
+
 function App() {
-  return (
-    <>
-      <p className="text-3xl">template</p>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
