@@ -32,12 +32,23 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: (
+          // <ProtectedRoutes>
+          <Dashboard />
+          // </ProtectedRoutes>
+        ),
       },
       {
         path: "/settings",
         element: <Settings />,
       },
     ],
+  },
+  {
+    path: "/login",
+    async lazy() {
+      const Login = await import("../pages/Login");
+      return { Component: Login.default };
+    },
   },
 ]);
